@@ -1,0 +1,16 @@
+PODS:
+  - CMTools (0.1.0)
+
+DEPENDENCIES:
+  - CMTools (from `../`)
+
+EXTERNAL SOURCES:
+  CMTools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CMTools: 8268b600775d60d14908340142f6d96332e2da35
+
+PODFILE CHECKSUM: 5ce5f37e801b66f54c93a521e7535aafeb60bcc7
+
+COCOAPODS: 1.9.1

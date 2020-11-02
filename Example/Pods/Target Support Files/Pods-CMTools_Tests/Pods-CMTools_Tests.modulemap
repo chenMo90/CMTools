@@ -1,0 +1,6 @@
+framework module Pods_CMTools_Tests {
+  umbrella header "Pods-CMTools_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module CMTools {
+  umbrella header "CMTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

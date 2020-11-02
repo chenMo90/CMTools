@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'CMTools_Example' do
+  pod 'CMTools', :path => '../'
+
+  target 'CMTools_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

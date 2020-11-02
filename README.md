@@ -9,6 +9,14 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
+
+提交 podspec 到本地
+
+	pod repo add CMTools https://github.com/chenMo90/CMTools.git
+
+向仓库中添加组件，可以在 `~/.cocoapods/repos/` 下查看 
+
 ## Requirements
 
 ## Installation
@@ -17,12 +25,12 @@ CMTools is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CMTools'
+pod 'CMTools' , :git => 'https://github.com/chenMo90/CMTools.git'
 ```
 
 ## Author
 
-904165900@qq.com, 904165900@qq.com
+Jim
 
 ## License
 

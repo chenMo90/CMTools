@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "904165900@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 682V5ZRT8K;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -494,6 +497,7 @@
 			baseConfigurationReference = 3126DBB76056EDFDEFACF6C1 /* Pods-CMTools_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 682V5ZRT8K;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMTools/CMTools-Prefix.pch";
 				INFOPLIST_FILE = "CMTools/CMTools-Info.plist";
@@ -510,6 +514,7 @@
 			baseConfigurationReference = 757AD482B39E37E8F58BC2F0 /* Pods-CMTools_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 682V5ZRT8K;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMTools/CMTools-Prefix.pch";
 				INFOPLIST_FILE = "CMTools/CMTools-Info.plist";

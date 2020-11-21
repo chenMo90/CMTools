@@ -32,13 +32,18 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'Classes/**/*.{h,m}'
 #  这个好像还是不行
-#  s.subspec 'Object' do |ss|
-#      ss.source_files = 'CMTools/Classes/Objcet/*.{h,m}'
+#  s.subspec 'Classes' do |ss|
+#    ss.subspec 'Object' do |sss|
+#      sss.source_files = 'CMTools/Classes/Objcet/*.{h,m}'
+#    end
 #  end
-  
-   s.resource_bundles = {
-     'CMTools' => ['Assets/*.xcassets']
-   }
+#  s.subspec 'Object' do |ss|
+#    ss.source_files = 'CMTools/Objcet/*.{h,m}'
+#  end
+#
+#   s.resource_bundles = {
+#     'CMTools' => ['Assets/*.xcassets']
+#   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

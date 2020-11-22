@@ -1,22 +1,46 @@
 {
   "name": "CMTools",
-  "version": "0.1.0",
-  "summary": "A short description of CMTools.",
+  "version": "0.0.1",
+  "summary": "工具类",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/904165900@qq.com/CMTools",
+  "homepage": "https://github.com/chenMo90/CMTools.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "904165900@qq.com": "904165900@qq.com"
+    "name": "Jim"
   },
   "source": {
-    "git": "https://github.com/904165900@qq.com/CMTools.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/chenMo90/CMTools.git",
+    "tag": "0.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "CMTools/Classes/**/*"
+  "resource_bundles": {
+    "CMTools": [
+      "Assets/*.xcassets"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Common",
+      "subspecs": [
+        {
+          "name": "Object",
+          "source_files": "Common/Object/*.{h,m}"
+        },
+        {
+          "name": "Category",
+          "subspecs": [
+            {
+              "name": "View",
+              "source_files": "Common/Category/View/*.{h,m}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

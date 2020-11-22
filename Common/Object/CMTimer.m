@@ -1,16 +1,15 @@
 //
-//  JimTimer.m
+//  CMTimer.m
 //  CMTools
 //
-//  Created by luogq on 2020/11/2.
-//  Copyright © 2020 jim. All rights reserved.
+//  Created by Jim on 2020/11/22.
 //
 
-#import "JimTimer.h"
+#import "CMTimer.h"
 
 #define kJimWeakObj(obj) __weak typeof(obj) weak##obj = obj
 
-@interface JimTimer () {
+@interface CMTimer () {
     /** 定时器的标识 */
     NSString *_key;
 }
@@ -20,7 +19,7 @@
 
 @end
 
-@implementation JimTimer
+@implementation CMTimer
 
 #pragma mark -- life cycle
 - (instancetype)init {
@@ -88,39 +87,39 @@
 
 
 
-#pragma mark -- JimTimerManager
-@interface JimTimerManager ()
+#pragma mark -- CMTimerManager
+@interface CMTimerManager ()
 
-/** 保存定时器 key:时间戳, value:JimTimer */
-@property (nonatomic, strong) NSMutableDictionary<NSString *, JimTimer *> *timerDic;
+/** 保存定时器 key:时间戳, value:CMTimer */
+@property (nonatomic, strong) NSMutableDictionary<NSString *, CMTimer *> *timerDic;
 
 @end
 
-@implementation JimTimerManager
+@implementation CMTimerManager
 
-static JimTimerManager *__manager;
+static CMTimerManager *__manager;
 
 #pragma mark -- public
 + (instancetype)manager {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        __manager = [JimTimerManager new];
+        __manager = [CMTimerManager new];
     });
     
     return __manager;
 }
 
 #pragma mark -- block形式的定时器
-+ (NSString *)startTimerWithChangeBlock:(JimTimerManagerChangeBlock)changeBlock
-                               endBlock:(JimTimerManagerEndBlock)endBlock {
++ (NSString *)startTimerWithChangeBlock:(CMTimerManagerChangeBlock)changeBlock
+                               endBlock:(CMTimerManagerEndBlock)endBlock {
     return [self startTimerWithChangeBlock:changeBlock
                                   endBlock:endBlock
                               maxTimeCount:0];
 }
-+ (NSString *)startTimerWithChangeBlock:(JimTimerManagerChangeBlock)changeBlock
-                               endBlock:(JimTimerManagerEndBlock)endBlock
++ (NSString *)startTimerWithChangeBlock:(CMTimerManagerChangeBlock)changeBlock
+                               endBlock:(CMTimerManagerEndBlock)endBlock
                            maxTimeCount:(NSUInteger)maxTimeCount {
-    JimTimer *timer = [JimTimer new];
+    CMTimer *timer = [CMTimer new];
     kJimWeakObj(timer);
     timer.changeBlock = ^(int interval) {
         if (changeBlock) {
@@ -138,35 +137,35 @@ static JimTimerManager *__manager;
     
     return [self startTimerWithTimer:timer];
 }
-+ (NSString *)startTimerWithTimer:(JimTimer *)timer {
-    if (!([timer isKindOfClass:[JimTimer class]] &&
++ (NSString *)startTimerWithTimer:(CMTimer *)timer {
+    if (!([timer isKindOfClass:[CMTimer class]] &&
           [timer.key isKindOfClass:[NSString class]])) {
         return nil;
     }
-    if ([[JimTimerManager manager].timerDic.allKeys containsObject:timer.key]) {
+    if ([[CMTimerManager manager].timerDic.allKeys containsObject:timer.key]) {
         return timer.key;
     }
     
     [timer startTimer];
     
-    [JimTimerManager manager].timerDic[timer.key] = timer;
+    [CMTimerManager manager].timerDic[timer.key] = timer;
     return timer.key;
 }
 
 #pragma mark -- 通知形式的定时器
-+ (JimTimer *)startNotificationTimerWithKey:(nullable NSString *)key {
++ (CMTimer *)startNotificationTimerWithKey:(nullable NSString *)key {
     return [self startNotificationTimerWithKey:key maxTimeCount:kMaxCountDownTime];
 }
-+ (JimTimer *)startNotificationTimerWithKey:(NSString *)key maxTimeCount:(NSUInteger)maxTimeCount {
-    JimTimer *timer = nil;
++ (CMTimer *)startNotificationTimerWithKey:(NSString *)key maxTimeCount:(NSUInteger)maxTimeCount {
+    CMTimer *timer = nil;
     if ([key isKindOfClass:[NSString class]]) {
-        timer = [JimTimerManager manager].timerDic[key];
+        timer = [CMTimerManager manager].timerDic[key];
     }
     if (timer) {
         return timer;
     }
     
-    timer = [JimTimer new];
+    timer = [CMTimer new];
     
     timer.maxTimeCount = maxTimeCount;
     if ([key isKindOfClass:[NSString class]]) {
@@ -177,19 +176,19 @@ static JimTimerManager *__manager;
     return timer;
 }
 
-+ (NSString *)startNotificationTimerWithTimer:(JimTimer *)timer {
-    if (!([timer isKindOfClass:[JimTimer class]] &&
++ (NSString *)startNotificationTimerWithTimer:(CMTimer *)timer {
+    if (!([timer isKindOfClass:[CMTimer class]] &&
           [timer.key isKindOfClass:[NSString class]])) {
         return nil;
     }
     
-    if ([[JimTimerManager manager].timerDic.allKeys containsObject:timer.key]) {
+    if ([[CMTimerManager manager].timerDic.allKeys containsObject:timer.key]) {
         return timer.key;
     }
     
     kJimWeakObj(timer);
     timer.changeBlock = ^(int interval) {
-        JimTimerManagerNotificationModel *model = [JimTimerManagerNotificationModel new];
+        CMTimerManagerNotificationModel *model = [CMTimerManagerNotificationModel new];
         model.interval = interval;
         model.key = weaktimer.key;
         [[NSNotificationCenter defaultCenter] postNotificationName:weaktimer.key object:model];
@@ -197,7 +196,7 @@ static JimTimerManager *__manager;
     timer.endBlock = ^{
         [self cancelTimerWithKey:weaktimer.key];
         
-        JimTimerManagerNotificationModel *model = [JimTimerManagerNotificationModel new];
+        CMTimerManagerNotificationModel *model = [CMTimerManagerNotificationModel new];
         model.interval = 0;
         model.key = weaktimer.key;
         [[NSNotificationCenter defaultCenter] postNotificationName:weaktimer.key object:model];
@@ -205,23 +204,23 @@ static JimTimerManager *__manager;
     
     [timer startTimer];
     
-    [JimTimerManager manager].timerDic[timer.key] = timer;
+    [CMTimerManager manager].timerDic[timer.key] = timer;
     return timer.key;
 }
 
 #pragma mark -- 其它
 + (void)cancelTimerWithKey:(NSString *)key {
     if ([key isKindOfClass:[NSString class]]) {
-        JimTimer *timer = [JimTimerManager manager].timerDic[key];
+        CMTimer *timer = [CMTimerManager manager].timerDic[key];
         if (timer) {
             [timer cancelTimer];
-            [[JimTimerManager manager].timerDic removeObjectForKey:key];
+            [[CMTimerManager manager].timerDic removeObjectForKey:key];
         }
     }
 }
 
 #pragma mark -- Getter & Setter
-- (NSMutableDictionary<NSString *, JimTimer *> *)timerDic {
+- (NSMutableDictionary<NSString *, CMTimer *> *)timerDic {
     if (!_timerDic) {
         _timerDic = [[NSMutableDictionary alloc] init];
     }
@@ -231,7 +230,7 @@ static JimTimerManager *__manager;
 @end
 
 
-#pragma mark -- JimTimerManagerNotificationModel
-@implementation JimTimerManagerNotificationModel
+#pragma mark -- CMTimerManagerNotificationModel
+@implementation CMTimerManagerNotificationModel
 
 @end

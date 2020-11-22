@@ -33,15 +33,17 @@ TODO: Add long description of the pod here.
 #  s.source_files = 'CMTools/Classes/**/*.{h,m}'
   s.subspec 'Common' do |ss|
     ss.subspec 'Object' do |sss|
-      sss.source_files = 'CMTools/Classes/Common/Object/*.{h,m}'
+      sss.source_files = 'Common/Object/*.{h,m}'
     end
     ss.subspec 'Category' do |sss|
-#      sss.source_files = 'CMTools/Classes/Common/Object/*.{h,m}'
+      sss.subspec 'View' do |ssss|
+        ssss.source_files = 'Common/Category/View/*.{h,m}'
+      end
     end
   end
 
   s.resource_bundles = {
-    'CMTools' => ['CMTools/Assets/*.xcassets']
+    'CMTools' => ['Assets/*.xcassets']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

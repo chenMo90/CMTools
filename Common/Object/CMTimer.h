@@ -1,31 +1,30 @@
 //
-//  JimTimer.h
+//  CMTimer.h
 //  CMTools
 //
-//  Created by luogq on 2020/11/2.
-//  Copyright © 2020 jim. All rights reserved.
-//  定时器默认60秒
+//  Created by Jim on 2020/11/22.
+//
 
 #import <Foundation/Foundation.h>
 
 /** 定时器改变,单位秒 */
-typedef void (^JimTimerChangeBlock)(int interval);
+typedef void (^CMTimerChangeBlock)(int interval);
 /** 定时器结束 */
-typedef void (^JimTimerEndBlock)(void);
+typedef void (^CMTimerEndBlock)(void);
 
 // 倒计时时间，可自定义
 static NSUInteger kMaxCountDownTime = 60;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JimTimer : NSObject
+@interface CMTimer : NSObject
 
 /** 定时器最大时间,默认kMaxCountDownTime,单位秒 */
 @property (nonatomic, assign) NSUInteger maxTimeCount;
 /** 定时器改变 */
-@property (nonatomic, copy) JimTimerChangeBlock changeBlock;
+@property (nonatomic, copy) CMTimerChangeBlock changeBlock;
 /** 定时器结束 */
-@property (nonatomic, copy) JimTimerEndBlock endBlock;
+@property (nonatomic, copy) CMTimerEndBlock endBlock;
 /** 是否重复,默认不重复 */
 @property (nonatomic, assign) BOOL isRepeat;
 /** 默认1000ms 单位ms */
@@ -42,13 +41,13 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-#pragma mark -- JimTimerManager
+#pragma mark -- CMTimerManager
 /** 定时器改变 key:定时器的标识，interval:剩余时间 */
-typedef void (^JimTimerManagerChangeBlock)(NSString *key, int interval);
+typedef void (^CMTimerManagerChangeBlock)(NSString *key, int interval);
 /** 定时器结束 key:定时器的标识 */
-typedef void (^JimTimerManagerEndBlock)(NSString *key);
+typedef void (^CMTimerManagerEndBlock)(NSString *key);
 
-@interface JimTimerManager : NSObject
+@interface CMTimerManager : NSObject
 
 + (instancetype)manager;
 
@@ -60,8 +59,8 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
  * @param endBlock 定时器结束
  * @return 返回唯一标识，用来取消定时器的
  */
-+ (NSString *)startTimerWithChangeBlock:(JimTimerManagerChangeBlock)changeBlock
-                               endBlock:(JimTimerManagerEndBlock)endBlock;
++ (NSString *)startTimerWithChangeBlock:(CMTimerManagerChangeBlock)changeBlock
+                               endBlock:(CMTimerManagerEndBlock)endBlock;
 /**
  * 开始定时器
  *
@@ -70,8 +69,8 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
  * @param maxTimeCount 定时器最大时间，单位秒
  * @return 返回唯一标识，用来取消定时器的
  */
-+ (NSString *)startTimerWithChangeBlock:(JimTimerManagerChangeBlock)changeBlock
-                               endBlock:(JimTimerManagerEndBlock)endBlock
++ (NSString *)startTimerWithChangeBlock:(CMTimerManagerChangeBlock)changeBlock
+                               endBlock:(CMTimerManagerEndBlock)endBlock
                            maxTimeCount:(NSUInteger)maxTimeCount;
 /**
  * 开始定时器
@@ -79,7 +78,7 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
  * @param timer 定时器
  * @return 返回唯一标识，用来取消定时器的
  */
-+ (NSString *)startTimerWithTimer:(JimTimer *)timer;
++ (NSString *)startTimerWithTimer:(CMTimer *)timer;
 
 #pragma mark -- 通知形式的定时器,需要接收通知请添加对应key的监听
 /**
@@ -88,14 +87,14 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
  * @param key 自定义key
  * @return 返回唯一标识，用来取消定时器的，发送通知也是用这个key
  */
-+ (JimTimer *)startNotificationTimerWithKey:(nullable NSString *)key;
++ (CMTimer *)startNotificationTimerWithKey:(nullable NSString *)key;
 /**
  * 开始定时器，通知的形式
  *
  * @param maxTimeCount 定时器最大时间，单位秒
  * @param key 自定义key
  */
-+ (JimTimer *)startNotificationTimerWithKey:(nullable NSString *)key maxTimeCount:(NSUInteger)maxTimeCount;
++ (CMTimer *)startNotificationTimerWithKey:(nullable NSString *)key maxTimeCount:(NSUInteger)maxTimeCount;
 
 /**
  *  开始定时器，通知的形式
@@ -103,7 +102,7 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
  *  @param timer 定时器,这个会重写changeBlock和endBlock
  *  @return 返回唯一标识，用来取消定时器的
  */
-+ (NSString *)startNotificationTimerWithTimer:(JimTimer *)timer;
++ (NSString *)startNotificationTimerWithTimer:(CMTimer *)timer;
 
 #pragma mark -- 其它
 /** 取消定时器 */
@@ -112,9 +111,9 @@ typedef void (^JimTimerManagerEndBlock)(NSString *key);
 @end
 
 
-#pragma mark -- JimTimerManagerNotificationModel
+#pragma mark -- CMTimerManagerNotificationModel
 /** 监听返回的对象 */
-@interface JimTimerManagerNotificationModel : NSObject
+@interface CMTimerManagerNotificationModel : NSObject
 
 /** 标识 */
 @property (nonatomic, copy) NSString *key;

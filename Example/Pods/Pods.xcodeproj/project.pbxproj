@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		1DE3B72AF75B251C82755C16B7013BD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3839BDA1256A37FF00C13975 /* CMTools.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3839BD9E256A37FF00C13975 /* CMTools.xcassets */; };
-		3839BDEF256A3FA700C13975 /* CMTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3839BDED256A3FA700C13975 /* CMTimer.h */; };
-		3839BDF0256A3FA700C13975 /* CMTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3839BDEE256A3FA700C13975 /* CMTimer.m */; };
+		3839BE1E256A44A800C13975 /* CMCategory_view.h in Headers */ = {isa = PBXBuildFile; fileRef = 3839BE1A256A44A800C13975 /* CMCategory_view.h */; };
+		3839BE1F256A44A800C13975 /* CMTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3839BE1C256A44A800C13975 /* CMTimer.m */; };
+		3839BE20256A44A800C13975 /* CMTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3839BE1D256A44A800C13975 /* CMTimer.h */; };
 		6762BCAF06D1E9467CB496613B1F923F /* Pods-CMTools_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E61F1BCC63CEA60739D70A24C3E3F5C /* Pods-CMTools_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68F19B70EFCE3F783BBEE6CBC91EE5DA /* Pods-CMTools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB02CEBA43C045344AC5AD19FBF26AB /* Pods-CMTools_Example-dummy.m */; };
 		76ABB3887E3B3AA2789A5203CBBE59C5 /* Pods-CMTools_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E46D2933F524E11F3ACF003351EA5BA /* Pods-CMTools_Tests-dummy.m */; };
@@ -47,9 +48,9 @@
 		2CABED2AC113C6EBD770622896FB4EC0 /* Pods-CMTools_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CMTools_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3839BD9E256A37FF00C13975 /* CMTools.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CMTools.xcassets; sourceTree = "<group>"; };
-		3839BDEC256A3F8500C13975 /* CMCategory_view.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMCategory_view.h; sourceTree = "<group>"; };
-		3839BDED256A3FA700C13975 /* CMTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMTimer.h; sourceTree = "<group>"; };
-		3839BDEE256A3FA700C13975 /* CMTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMTimer.m; sourceTree = "<group>"; };
+		3839BE1A256A44A800C13975 /* CMCategory_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCategory_view.h; sourceTree = "<group>"; };
+		3839BE1C256A44A800C13975 /* CMTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTimer.m; sourceTree = "<group>"; };
+		3839BE1D256A44A800C13975 /* CMTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTimer.h; sourceTree = "<group>"; };
 		4A34514B3F99CD5732836692FEDF0CDA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52C44605288998CCF12B5E57F8921176 /* Pods-CMTools_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CMTools_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5BB02CEBA43C045344AC5AD19FBF26AB /* Pods-CMTools_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CMTools_Example-dummy.m"; sourceTree = "<group>"; };
@@ -121,15 +122,6 @@
 			path = "Target Support Files/Pods-CMTools_Tests";
 			sourceTree = "<group>";
 		};
-		3839BD9A256A37FF00C13975 /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				3839BDED256A3FA700C13975 /* CMTimer.h */,
-				3839BDEE256A3FA700C13975 /* CMTimer.m */,
-			);
-			path = Object;
-			sourceTree = "<group>";
-		};
 		3839BD9D256A37FF00C13975 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,29 +130,47 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		3839BDB5256A3B0A00C13975 /* Common */ = {
+		3839BE16256A44A800C13975 /* CMTools */ = {
 			isa = PBXGroup;
 			children = (
-				3839BDE9256A3E6E00C13975 /* Category */,
-				3839BD9A256A37FF00C13975 /* Object */,
+				3839BE17256A44A800C13975 /* Common */,
+				3839BD9D256A37FF00C13975 /* Assets */,
+			);
+			path = CMTools;
+			sourceTree = "<group>";
+		};
+		3839BE17256A44A800C13975 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3839BE18256A44A800C13975 /* Category */,
+				3839BE1B256A44A800C13975 /* Object */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		3839BDE9256A3E6E00C13975 /* Category */ = {
+		3839BE18256A44A800C13975 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				3839BDEA256A3F0C00C13975 /* View */,
+				3839BE19256A44A800C13975 /* View */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		3839BDEA256A3F0C00C13975 /* View */ = {
+		3839BE19256A44A800C13975 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3839BDEC256A3F8500C13975 /* CMCategory_view.h */,
+				3839BE1A256A44A800C13975 /* CMCategory_view.h */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3839BE1B256A44A800C13975 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				3839BE1C256A44A800C13975 /* CMTimer.m */,
+				3839BE1D256A44A800C13975 /* CMTimer.h */,
+			);
+			path = Object;
 			sourceTree = "<group>";
 		};
 		423B6C6FB0C13E99C06F89E9BCDE5CEF /* Support Files */ = {
@@ -253,8 +263,7 @@
 		DE032E2396F5C31220C74ED425FB711C /* CMTools */ = {
 			isa = PBXGroup;
 			children = (
-				3839BDB5256A3B0A00C13975 /* Common */,
-				3839BD9D256A37FF00C13975 /* Assets */,
+				3839BE16256A44A800C13975 /* CMTools */,
 				8C8B42D12241A3F1B5BFF752E9668EF8 /* Pod */,
 				423B6C6FB0C13E99C06F89E9BCDE5CEF /* Support Files */,
 			);
@@ -295,7 +304,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E482B07632069FD1C2AA308D9488D0 /* CMTools-umbrella.h in Headers */,
-				3839BDEF256A3FA700C13975 /* CMTimer.h in Headers */,
+				3839BE1E256A44A800C13975 /* CMCategory_view.h in Headers */,
+				3839BE20256A44A800C13975 /* CMTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,8 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3839BDF0256A3FA700C13975 /* CMTimer.m in Sources */,
 				EE126D6923609BBC1A6F4231FF1DA1F6 /* CMTools-dummy.m in Sources */,
+				3839BE1F256A44A800C13975 /* CMTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

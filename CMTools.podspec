@@ -35,6 +35,9 @@ TODO: Add long description of the pod here.
     ss.subspec 'Object' do |sss|
       sss.source_files = 'CMTools/Classes/Common/Object/*.{h,m}'
     end
+    ss.subspec 'Category' do |sss|
+#      sss.source_files = 'CMTools/Classes/Common/Object/*.{h,m}'
+    end
   end
 
   s.resource_bundles = {

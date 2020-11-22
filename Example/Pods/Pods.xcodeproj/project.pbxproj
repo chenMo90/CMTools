@@ -157,9 +157,17 @@
 		3839BDB5256A3B0A00C13975 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3839BDE9256A3E6E00C13975 /* Category */,
 				3839BD9A256A37FF00C13975 /* Object */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3839BDE9256A3E6E00C13975 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		423B6C6FB0C13E99C06F89E9BCDE5CEF /* Support Files */ = {

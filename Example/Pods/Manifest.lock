@@ -1,5 +1,13 @@
 PODS:
-  - CMTools (0.1.0)
+  - CMTools (0.0.1):
+    - CMTools/Common (= 0.0.1)
+  - CMTools/Common (0.0.1):
+    - CMTools/Common/Category (= 0.0.1)
+    - CMTools/Common/Object (= 0.0.1)
+  - CMTools/Common/Category (0.0.1):
+    - CMTools/Common/Category/View (= 0.0.1)
+  - CMTools/Common/Category/View (0.0.1)
+  - CMTools/Common/Object (0.0.1)
 
 DEPENDENCIES:
   - CMTools (from `../`)
@@ -9,8 +17,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CMTools: 8268b600775d60d14908340142f6d96332e2da35
+  CMTools: 3695a131a4bfb8475bf79ee2dec3c7bef77747c0
 
-PODFILE CHECKSUM: 5ce5f37e801b66f54c93a521e7535aafeb60bcc7
+PODFILE CHECKSUM: 70934c1bc65e7b4ed53371a43382951e3feb613c
 
 COCOAPODS: 1.9.1

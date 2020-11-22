@@ -20,7 +20,7 @@
   },
   "resource_bundles": {
     "CMTools": [
-      "Assets/*.xcassets"
+      "CMTools/Assets/*.xcassets"
     ]
   },
   "subspecs": [
@@ -29,14 +29,14 @@
       "subspecs": [
         {
           "name": "Object",
-          "source_files": "Common/Object/*.{h,m}"
+          "source_files": "CMTools/Common/Object/*.{h,m}"
         },
         {
           "name": "Category",
           "subspecs": [
             {
               "name": "View",
-              "source_files": "Common/Category/View/*.{h,m}"
+              "source_files": "CMTools/Common/Category/View/*.{h,m}"
             }
           ]
         }

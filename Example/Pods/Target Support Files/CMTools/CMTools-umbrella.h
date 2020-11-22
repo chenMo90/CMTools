@@ -10,6 +10,8 @@
 #endif
 #endif
 
+#import "CMCategory_view.h"
+#import "CMTimer.h"
 
 FOUNDATION_EXPORT double CMToolsVersionNumber;
 FOUNDATION_EXPORT const unsigned char CMToolsVersionString[];

@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1DE3B72AF75B251C82755C16B7013BD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3839BD9F256A37FF00C13975 /* JimTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3839BD9B256A37FF00C13975 /* JimTimer.h */; };
+		3839BDA0256A37FF00C13975 /* JimTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3839BD9C256A37FF00C13975 /* JimTimer.m */; };
+		3839BDA1256A37FF00C13975 /* CMTools.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3839BD9E256A37FF00C13975 /* CMTools.xcassets */; };
 		6762BCAF06D1E9467CB496613B1F923F /* Pods-CMTools_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E61F1BCC63CEA60739D70A24C3E3F5C /* Pods-CMTools_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68F19B70EFCE3F783BBEE6CBC91EE5DA /* Pods-CMTools_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB02CEBA43C045344AC5AD19FBF26AB /* Pods-CMTools_Example-dummy.m */; };
 		76ABB3887E3B3AA2789A5203CBBE59C5 /* Pods-CMTools_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E46D2933F524E11F3ACF003351EA5BA /* Pods-CMTools_Tests-dummy.m */; };
 		956C73728BAB634F471EDC7988BFCC08 /* Pods-CMTools_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A85E55191A802F27E7C2F1EDEB1063B /* Pods-CMTools_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7E482B07632069FD1C2AA308D9488D0 /* CMTools-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC4FC0117F9EF44942F17B4772D64C52 /* CMTools-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3AF8FC325691CB700B5A51C /* CMTools.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3AF8FBE25691CB700B5A51C /* CMTools.xcassets */; };
-		B3AF8FC425691CB700B5A51C /* JimTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B3AF8FC125691CB700B5A51C /* JimTimer.h */; };
-		B3AF8FC525691CB700B5A51C /* JimTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AF8FC225691CB700B5A51C /* JimTimer.m */; };
 		C5E69B9B6FA0445F1CA478A950F9DBE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		EE126D6923609BBC1A6F4231FF1DA1F6 /* CMTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0509D8BFA8F7534E98895D34F554AACE /* CMTools-dummy.m */; };
 		FC01F4F825BABFD2B0D837F1F925DB1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -46,6 +46,9 @@
 		1A85E55191A802F27E7C2F1EDEB1063B /* Pods-CMTools_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CMTools_Example-umbrella.h"; sourceTree = "<group>"; };
 		2CABED2AC113C6EBD770622896FB4EC0 /* Pods-CMTools_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CMTools_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3839BD9B256A37FF00C13975 /* JimTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JimTimer.h; sourceTree = "<group>"; };
+		3839BD9C256A37FF00C13975 /* JimTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JimTimer.m; sourceTree = "<group>"; };
+		3839BD9E256A37FF00C13975 /* CMTools.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CMTools.xcassets; sourceTree = "<group>"; };
 		4A34514B3F99CD5732836692FEDF0CDA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52C44605288998CCF12B5E57F8921176 /* Pods-CMTools_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CMTools_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5BB02CEBA43C045344AC5AD19FBF26AB /* Pods-CMTools_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CMTools_Example-dummy.m"; sourceTree = "<group>"; };
@@ -66,9 +69,6 @@
 		A890B6FD36825D6FB7C55BD7AEE40885 /* CMTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CMTools.release.xcconfig; sourceTree = "<group>"; };
 		B0CA7C20B9F9BE71A2B676448EA3A832 /* CMTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CMTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B296D0E869D794BCBC361E0A6932F4FE /* Pods-CMTools_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CMTools_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B3AF8FBE25691CB700B5A51C /* CMTools.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CMTools.xcassets; sourceTree = "<group>"; };
-		B3AF8FC125691CB700B5A51C /* JimTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JimTimer.h; sourceTree = "<group>"; };
-		B3AF8FC225691CB700B5A51C /* JimTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JimTimer.m; sourceTree = "<group>"; };
 		BC4FC0117F9EF44942F17B4772D64C52 /* CMTools-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CMTools-umbrella.h"; sourceTree = "<group>"; };
 		C817D5E355635AD1AF17F29C442D77EE /* Pods-CMTools_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CMTools_Tests-Info.plist"; sourceTree = "<group>"; };
 		D71F66FF50156C4E2E97E012E661FA20 /* Pods_CMTools_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMTools_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +118,40 @@
 			);
 			name = "Pods-CMTools_Tests";
 			path = "Target Support Files/Pods-CMTools_Tests";
+			sourceTree = "<group>";
+		};
+		3839BD98256A37FF00C13975 /* CMTools */ = {
+			isa = PBXGroup;
+			children = (
+				3839BD99256A37FF00C13975 /* Classes */,
+				3839BD9D256A37FF00C13975 /* Assets */,
+			);
+			path = CMTools;
+			sourceTree = "<group>";
+		};
+		3839BD99256A37FF00C13975 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3839BD9A256A37FF00C13975 /* Object */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3839BD9A256A37FF00C13975 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				3839BD9B256A37FF00C13975 /* JimTimer.h */,
+				3839BD9C256A37FF00C13975 /* JimTimer.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		3839BD9D256A37FF00C13975 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3839BD9E256A37FF00C13975 /* CMTools.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		423B6C6FB0C13E99C06F89E9BCDE5CEF /* Support Files */ = {
@@ -170,31 +204,6 @@
 			path = "Target Support Files/Pods-CMTools_Example";
 			sourceTree = "<group>";
 		};
-		B3AF8FBD25691CB700B5A51C /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				B3AF8FBE25691CB700B5A51C /* CMTools.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		B3AF8FBF25691CB700B5A51C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				B3AF8FC025691CB700B5A51C /* Object */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		B3AF8FC025691CB700B5A51C /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				B3AF8FC125691CB700B5A51C /* JimTimer.h */,
-				B3AF8FC225691CB700B5A51C /* JimTimer.m */,
-			);
-			path = Object;
-			sourceTree = "<group>";
-		};
 		B562FA15E545DF6AC1B2AC3056C98B1E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,8 +244,7 @@
 		DE032E2396F5C31220C74ED425FB711C /* CMTools */ = {
 			isa = PBXGroup;
 			children = (
-				B3AF8FBD25691CB700B5A51C /* Assets */,
-				B3AF8FBF25691CB700B5A51C /* Classes */,
+				3839BD98256A37FF00C13975 /* CMTools */,
 				8C8B42D12241A3F1B5BFF752E9668EF8 /* Pod */,
 				423B6C6FB0C13E99C06F89E9BCDE5CEF /* Support Files */,
 			);
@@ -277,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7E482B07632069FD1C2AA308D9488D0 /* CMTools-umbrella.h in Headers */,
-				B3AF8FC425691CB700B5A51C /* JimTimer.h in Headers */,
+				3839BD9F256A37FF00C13975 /* JimTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3AF8FC325691CB700B5A51C /* CMTools.xcassets in Resources */,
+				3839BDA1256A37FF00C13975 /* CMTools.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3AF8FC525691CB700B5A51C /* JimTimer.m in Sources */,
+				3839BDA0256A37FF00C13975 /* JimTimer.m in Sources */,
 				EE126D6923609BBC1A6F4231FF1DA1F6 /* CMTools-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

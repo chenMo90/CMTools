@@ -30,20 +30,14 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Classes/**/*.{h,m}'
-#  这个好像还是不行
-#  s.subspec 'Classes' do |ss|
-#    ss.subspec 'Object' do |sss|
-#      sss.source_files = 'CMTools/Classes/Objcet/*.{h,m}'
-#    end
-#  end
-#  s.subspec 'Object' do |ss|
-#    ss.source_files = 'CMTools/Objcet/*.{h,m}'
-#  end
-#
-#   s.resource_bundles = {
-#     'CMTools' => ['Assets/*.xcassets']
-#   }
+#  s.source_files = 'CMTools/Classes/**/*.{h,m}'
+  s.subspec 'Object' do |ss|
+    ss.source_files = 'CMTools/Classes/Object/*.{h,m}'
+  end
+
+  s.resource_bundles = {
+    'CMTools' => ['CMTools/Assets/*.xcassets']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
